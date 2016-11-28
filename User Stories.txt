@@ -1,9 +1,33 @@
 User Stories
+=========================================================================================================================================
 
-Titel:
-Anforderung:
+Titel: Stack-Element
+Anforderung: Element des Stackes, welches als Information das zugewiesene Element zum Stack beinhalten soll und eine Referenz auf das nächste Element.
 Akzeptanzkriterien:
+	* Die Klasse muss generisch sein
+	* Die Klasse muss eine Referenz auf das nachfolgende Stack-Element beinhalten(das letzte Element verweist auf Null)
+	* Die Klasse muss die zugewiesene Information des Stacks beinhalten
 
 Hinweise:
 
 Status:
+	* alle Punkte offen
+
+=========================================================================================================================================
+Titel: Stack
+Anforderung: Eine Klasse Stack, welche nach dem LIFO-Prinzip arbeiten soll erstellen.
+Akzeptanzkriterien:
+	* Die Klasse soll nach dem LIFO Prinzip arbeiten
+	* Die Klasse soll generisch sein
+	* Die Stackgröße soll sich dynamisch anpassen
+	* Der Stack soll mit mit einer Methode komplett geleert werden
+	* Es muss möglich sein ein Element dem Stack hinzuzufügen, welches am Ende des Stackes gelegt wird
+	* Es muss möglich sein das letzte Element des Stacks auslesen zu können
+	* Es muss möglich sein das letzte Element das Stacks heraus zu nehmen
+
+Hinweise:
+
+Status:
+	* alle Punkte offen
+
+=========================================================================================================================================

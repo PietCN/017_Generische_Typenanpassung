@@ -4,22 +4,15 @@ class program
 {
   static void Main()
   {
-    Stack_Element<int> ele = new Stack_Element<int>();
-    Stack_Element<string> strEle = new Stack_Element<string>();
-    Stack_Element<string> strEle2 = new Stack_Element<string>();
+    Stack<int> State = new Stack<int>();
+    State.Push(new Stack_Element<int>(38));
+    State.Push(new Stack_Element<int>(7));
 
-    ele.element = 2;
-    strEle.element = "Hallo";
-    strEle2.element = " Welt";
+    Console.WriteLine(State.Piek().element);
+    Console.WriteLine(State.Pop().element);
+    Console.WriteLine(State.Pop().element);
 
-    strEle.nextElement = strEle2;
-
-    Console.WriteLine(strEle.element);
-    Console.WriteLine(ele.element);
-
-    Console.WriteLine("Iterative Ausgabe:");
-    for (Stack_Element<string> i = strEle; i != null; i = i.nextElement)
-      Console.WriteLine(i.element);
+    Console.WriteLine(State.Count);
 
     Console.Read();
   }

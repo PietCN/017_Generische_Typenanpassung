@@ -11,7 +11,9 @@ Akzeptanzkriterien:
 Hinweise:
 
 Status:
-	* alle Punkte offen
+	* Klasse erstellt
+	* Implementierung vollständig
+	* Fertig
 
 =========================================================================================================================================
 Titel: Stack

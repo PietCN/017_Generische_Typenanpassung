@@ -1,10 +1,7 @@
 ﻿using System;
 
-namespace _017_Generische_Typenanpassung
+public class Stack_Element<T>
 {
-  class Stack_Element<T>
-  {
-    public T element;
-    public Stack_Element<T> nextElement = null;
-  }
+  public T element;
+  public Stack_Element<T> nextElement = null;
 }

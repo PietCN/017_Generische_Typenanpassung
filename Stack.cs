@@ -2,7 +2,7 @@
 
 public class Stack<T>
 {
-  private Stack_Element<T> lastElement = null;
+  private Stack_Element<T> lastElement;
   private uint size = 0;
 
   /// <summary>
@@ -20,55 +20,42 @@ public class Stack<T>
   /// Fügt ein Element am Ende des Stackes ein.
   /// </summary>
   /// <param name="element"></param>
-  public void Push(Stack_Element<T> element)
+  public void Push(T element)
   {
-    if (lastElement == null)
-      lastElement = element;
-    else
+    if (element != null)
     {
-      element.previousElement = lastElement;
-      lastElement = element;
+      lastElement = new Stack_Element<T>(lastElement, element);
+      size++;
     }
-    size++;
   }
   /// <summary>
   /// Gibt das letzte Element zurück ohne dies aus dem Stack zu entfernen.
   /// </summary>
   /// <returns></returns>
-  public Stack_Element<T> Piek()
+  public T Piek()
   {
     if (lastElement != null)
     {
-      Stack_Element<T> temp = new Stack_Element<T>(lastElement);
-      temp.previousElement = null;
-      return temp;
+      return lastElement.element;
     }
     else
-      return null;
+      return default(T);
   }
   /// <summary>
   /// Gibt das letzte Element zurück und entfernt dieses aus dem Stack.
   /// </summary>
   /// <returns></returns>
-  public Stack_Element<T> Pop()
+  public T Pop()
   {
     if (lastElement != null)
     {
-      Stack_Element<T> temp = new Stack_Element<T>(lastElement);
-      if (lastElement.previousElement == null)
-      {
-        lastElement = null;
-      }
-      else
-      {
-        temp.previousElement = null;
-        lastElement = lastElement.previousElement;
-      }
+      T temp = lastElement.element;
+      lastElement = lastElement.previousElement;
       size--;
       return temp;
     }
     else
-      return null;
+      return default(T);
   }
 
   /// <summary>
@@ -76,7 +63,7 @@ public class Stack<T>
   /// </summary>
   public void clear()
   {
-    for (Stack_Element<T> ele = lastElement; ele.previousElement != null; ele = ele.previousElement)
+    for (Stack_Element<T> ele = lastElement; ele != null; ele = ele.previousElement)
       Pop();
   }
 }

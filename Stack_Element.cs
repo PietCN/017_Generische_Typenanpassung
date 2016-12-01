@@ -6,9 +6,10 @@ public class Stack_Element<T>
   /// Initialisierungskonstruktor
   /// </summary>
   /// <param name="element"></param>
-  public Stack_Element(T element)
+  public Stack_Element(Stack_Element<T> previous, T element)
     {
       this.element = element;
+      this.previousElement = previous;
     }
   /// <summary>
   /// Kopierkonstruktor
